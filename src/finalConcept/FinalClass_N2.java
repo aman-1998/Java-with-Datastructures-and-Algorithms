@@ -19,5 +19,7 @@ public class FinalClass_N2 {
 		A a = new A();
 		a.property1();
 		a.property2();
+		
+		
 	}
 }
