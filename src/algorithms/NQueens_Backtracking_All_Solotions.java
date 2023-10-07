@@ -53,7 +53,7 @@ public class NQueens_Backtracking_All_Solotions {
 		}
 		
 		// check diagonals from the coordinate
-		for(int i=0; i<=n-1; i++) {
+		for(int i=0; i<=n-1; i++) { // for(int i=0; i<=row-1; i++) {
 			for(int j=0; j<=n-1; j++) {
 				if(i+j == row+col || i-j == row-col) {
 					if(board[i][j] == 1) {

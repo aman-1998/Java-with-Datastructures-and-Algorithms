@@ -48,7 +48,7 @@ public class Stream_N7 {
 		
 		System.out.println("---------------------------------");
 		List<Integer> listOfIntegers = Arrays.asList(3, 4, 8, 1, 5);
-		listOfIntegers.stream().filter(element -> element > 4).forEach(elementsGreaterThan4 -> System.out.println(elementsGreaterThan4));
+		listOfIntegers.stream().filter(element -> element > 4).forEach(elementGreaterThan4 -> System.out.println(elementGreaterThan4));
 		
 		System.out.println("---------------------------------");
 		ArrayList<Integer> arrInt = listOfIntegers.stream().filter(element -> element%2 !=0).collect(Collectors.toCollection(() -> new ArrayList<Integer>()));
@@ -72,7 +72,7 @@ public class Stream_N7 {
 		listOfWords.forEach(t -> System.out.println(t));
 		
 		ArrayList<String> arrList = new ArrayList<>(listOfWords); // Like this we can convert List to ArrayList
-		LinkedList<String> linkedList = new LinkedList<>(listOfWords); // Like this we can convert List to ArrayList
+		LinkedList<String> linkedList = new LinkedList<>(listOfWords); // Like this we can convert List to LinkedList
 		
 		System.out.println("---------------------------------");
 		Map<String, Integer> map = listOfIntegers.stream().collect(Collectors.toMap(integer -> convertToWords(integer), integer -> integer));

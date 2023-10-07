@@ -4,6 +4,12 @@ class Node1 {
 	public int data;
 	public Node1 link;
 }
+/*
+ * Brute Force approach: The idea is to insert the nodes in the hashmap 
+ * and whenever a node is encountered that is already present in the 
+ * hashmap then return true. Time = O(n) but Space = O(n). 
+ * So, Floyd's cycle detection algorithm is used
+ */
 
 public class Remove_Loop_From_LinkedList {
 	
@@ -42,6 +48,7 @@ public class Remove_Loop_From_LinkedList {
 	 * if loop exist then returns the Node where fast and slow meets
 	 * if there is no loop then return null 
 	 */
+	// Time = O(n), Space = O(1)
 	public static Node1 detectLoop(Node1 start) {
 		
 		if(start==null) {

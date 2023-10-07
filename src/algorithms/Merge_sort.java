@@ -14,12 +14,52 @@ public class Merge_sort {
 			int q = (p+r)/2; // Divide
 			input = mergeSort(input, p, q);
 			input = mergeSort(input, q+1, r);
-			input = merge_2nd_approach(input, p , q, r);
+			input = merge(input, p , q, r);
 		}
 		return input;
 	}
+	
+	/*
+	 * Best approach 
+	 * T = O(n), S = O(n)
+	 */
+	public static int[] merge(int[] arr, int p, int q, int r) {
+		
+		int[] mergedArray = new int[r-p+1];
+		int i = p;
+		int j = q+1;
+		
+		for(int k = 0; k < r-p+1; k++) {
+			
+			if(i == q+1 && j <= r) {
+				mergedArray[k] = arr[j];
+				j++;
+				continue;
+			} else if(j == r+1 && i <= q) {
+				mergedArray[k] = arr[i];
+				i++;
+				continue;
+			} else if(i <= q && j <= r) {
+				if(arr[i] <= arr[j]) {
+					mergedArray[k] = arr[i];
+					i++;
+				} else {
+					mergedArray[k] = arr[j];
+					j++;
+				}
+			} else {
+				break;
+			}
+		}
+		
+		for(int k = 0; k < r-p+1; k++) {
+			arr[k+p] = mergedArray[k];
+		}
+		
+		return arr;
+	}
 
-	private static int[] merge(int[] input, int p, int q, int r) {
+	private static int[] merge_2nd_approach(int[] input, int p, int q, int r) {
 		int[] sortedList1 = new int[q-p+2];
 		int[] sortedList2 = new int[r-q+1];
 		int index = 0;
@@ -50,7 +90,7 @@ public class Merge_sort {
 		return input;
 	}
 	
-	private static int[] merge_2nd_approach(int[] input, int p, int q, int r) {
+	private static int[] merge_3rd_approach(int[] input, int p, int q, int r) {
 		int[] sortedList1 = new int[q-p+2];
 		int[] sortedList2 = new int[r-q+1];
 		int index = 0;

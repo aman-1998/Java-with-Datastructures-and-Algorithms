@@ -2,8 +2,11 @@ package algorithms;
 
 /* Problem Statement: Given an integer array arr, find the contiguous 
  * subarray (containing at least one number) which has the largest 
- * sum and return its sum and print the subarray.*/
-public class Kadanes_Algo {
+ * sum and return its sum and print the subarray.
+ * 
+ * Note: The length of subArray should be maximum
+ * */
+public class Kadanes_Algo_Modified {
 	private static int[] subArrayStartEnd = {0,0};
 	
 	public static void main(String[] args) {

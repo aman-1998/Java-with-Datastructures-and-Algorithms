@@ -41,11 +41,11 @@ public class Topological_sort {
 		
 		while(!queue.isEmpty()) {
 			int v = queue.removeFirst();
-			indegree[v]--; // indegree[v] = -1;
+			indegree[v]--; // indegree[v] = -1; // Equivalent to deletion of vertex
 			result = result + String.valueOf(v) + " ";
 			for(int i = 1; i <= n; i++) {
 				if(Graph[v][i] == 1) {
-					indegree[i]--;
+					indegree[i]--; // Equivalent to deletion of edge
 					if(indegree[i] == 0) {
 						queue.add(i);
 					}
