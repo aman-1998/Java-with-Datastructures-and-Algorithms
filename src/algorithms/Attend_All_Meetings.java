@@ -30,24 +30,24 @@ public class Attend_All_Meetings {
 	}
 	
 	//Space = O(1), Time = O(nlogn) <Better Solution>
-		public static boolean attendAllMeetings(int[][] intervals) {
+	public static boolean attendAllMeetings(int[][] intervals) {
+		
+		// Sorting 2d matrix
+		//Arrays.sort(intervals, (int[] interval1, int[] interval2) -> interval1[1] < interval2[1] ? -1 : 1);
+		Arrays.sort(intervals, Comparator.comparing((int[] interval) -> interval[1])); // Better approach to sort than above line
 			
-			// Sorting 2d matrix
-			//Arrays.sort(intervals, (int[] interval1, int[] interval2) -> interval1[1] < interval2[1] ? -1 : 1);
-			Arrays.sort(intervals, Comparator.comparing((int[] interval) -> interval[0])); // Better approach to sort than above line
-				
-			//Compare previous interval's endTime and current interval's startTime
-			int prevEndTime = intervals[0][1];
-			for(int i=1; i < intervals.length ; i++) {
-				
-				// if previous meeting is not over and new meeting starts then return false
-				if(intervals[i][0] < prevEndTime) {
-					return false;
-				}
-				prevEndTime = intervals[i][1]; // store endTime of current meeting so that we can use it in next iteration
+		//Compare previous interval's endTime and current interval's startTime
+		int prevEndTime = intervals[0][1];
+		for(int i=1; i < intervals.length ; i++) {
+			
+			// if previous meeting is not over and new meeting starts then return false
+			if(intervals[i][0] < prevEndTime) {
+				return false;
 			}
-			return true;
+			prevEndTime = intervals[i][1]; // store endTime of current meeting so that we can use it in next iteration
 		}
+		return true;
+	}
 	
 	//Space = O(n), Time = O(nlogn)
 	public static boolean attendAllMeetings2(int[][] intervals) {

@@ -9,11 +9,12 @@ package algorithms;
 
 public class Stock_Buy_Sell {
 	
-	public static int buyDay, sellDay;
+	public static int tempBuyDay, buyDay, sellDay;
 	
 	public static void main(String[] args) {
 		
-		int[] arr = {7, 1, 5, 3, 6, 4};
+		int[] arr = {2, 4, 3, 5, 6, 1, 4, 3};
+		//int[] arr = {7, 1, 5, 3, 6, 4};
 		//int [] arr = {7, 6, 4, 3, 1};
 		//int [] arr = {7, 6};
 		//int [] arr = {6, 7};
@@ -69,11 +70,12 @@ public class Stock_Buy_Sell {
 			if(profit > maxProfit) {
 				maxProfit = profit; 
 				sellDay = i;
+				buyDay = tempBuyDay;
 			}
 			
 			if(arr[i] < minSoFar) {
 				minSoFar = arr[i];
-				buyDay = i;
+				tempBuyDay = i;
 			}
 		}
 		
