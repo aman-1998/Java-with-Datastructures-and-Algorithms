@@ -1,8 +1,8 @@
-package bitwise;
+package algorithms;
 
 import java.util.Scanner;
 
-public class Bitwise_N1
+public class Bitwise_Basic_Operations
 {
 	public static void main(String[] args)
 	{
@@ -19,7 +19,7 @@ public class Bitwise_N1
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter any integer: ");
 		int input = in.nextInt();
-		Bitwise_N1 ob = new Bitwise_N1();
+		Bitwise_Basic_Operations ob = new Bitwise_Basic_Operations();
 		System.out.print("n = "+ob.integerToBinaryPrint(input));
 		
 		//We want to clear nth bit from right side (use of &)

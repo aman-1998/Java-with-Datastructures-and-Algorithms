@@ -4,15 +4,23 @@ public class ExcelColumnNumber {
 	
 	public static void main(String[] args) {
 		
-		String excelColumn = "ABC";
-		int excelColumnNo = excelColumnNumber(excelColumn); // T = O(n)
-		System.out.println("Column no. for " + excelColumn + " is " + excelColumnNo);
+		String columnTitle = "ABC";
+		int excelColumnNumber = excel_column_number(columnTitle);
+		
+		System.out.println(excelColumnNumber);
 	}
 
-	private static int excelColumnNumber(String excelColumn) {
+	/*
+	 * T = O(n)
+	 * S = O(1)
+	 */
+	private static int excel_column_number(String columnTitle) {
+		
+		int n = columnTitle.length();
 		int res = 0;
-		for(int i=0; i < excelColumn.length(); i++) {
-			res = res*26 + (excelColumn.charAt(i) - 64);
+		for(int i = 0; i <= n-1; i++) {
+			//res = res*26 + (columnTitle.charAt(i) - 64);
+			res = res*26 + (columnTitle.charAt(i) - 'A' + 1);
 		}
 		return res;
 	}
