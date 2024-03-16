@@ -9,4 +9,10 @@ public class HPDevice implements Printer, Scanner { // Multiple inheritance
 	public void scan() {
 		System.out.println("HPDevice scans");
 	}
+
+	@Override
+	public void changeColor() {
+		System.out.println("Colored or Black-White");
+		
+	}
 }

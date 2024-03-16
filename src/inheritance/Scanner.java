@@ -1,5 +1,6 @@
 package inheritance;
 
 public interface Scanner {
-	void scan();
+	void scan(); // Public abstract
+	void changeColor(); // Public abstract
 }

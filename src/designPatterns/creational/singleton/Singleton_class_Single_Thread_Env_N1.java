@@ -1,5 +1,6 @@
 package designPatterns.creational.singleton;
 
+
 public class Singleton_class_Single_Thread_Env_N1 {
 	public static void main(String[] args) {
 		Singleton1 obj1 = Singleton1.getInstance();

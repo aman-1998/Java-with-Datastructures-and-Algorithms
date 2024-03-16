@@ -19,9 +19,9 @@ public static void main(String[] args) {
 			address.setTemporary("Banglore");
 			address.setPermanent("Haryana");
 			
-			List<String> subjects = employee1.getProjects();
-			subjects.remove("P2");
-			subjects.remove("P1");
+			List<String> projects = employee1.getProjects();
+			projects.remove("P2");
+			projects.remove("P1");
 			
 			System.out.println(employee1);
 			

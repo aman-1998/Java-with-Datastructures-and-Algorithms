@@ -28,7 +28,15 @@ public class PhoneBuilder {
 		return this;
 	}
 	
-	public Phone getPhone() {
-		return new Phone(os, processor, ram, cameraPx, battery);
+	public Phone build() {
+		
+		Phone phone = new Phone();
+		phone.setOs(os);
+		phone.setBattery(battery);
+		phone.setCameraPx(cameraPx);
+		phone.setProcessor(processor);
+		phone.setRam(ram);
+		
+		return phone;
 	}
 }

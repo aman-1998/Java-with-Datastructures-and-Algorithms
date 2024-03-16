@@ -1,41 +1,44 @@
 package algorithms;
 
+import java.util.Arrays;
+
 public class Longest_Increasing_Subsequence {
 	
 	public static void main(String[] args) {
-		int len = LIS(new int[] {10, 9, 8, 7, 25, 13});
+		
+		int[] arr = new int[] {10, 9, 2, 5, 3, 7, 101, 18};
+		int n = arr.length;
+		
+		int[][] dp = new int[n+1][n+1];
+		for(int[] i : dp) {
+			Arrays.fill(i, -1);
+		}
+		
+		int len = LIS(0, -1, arr, dp);
 		System.out.println(len);
 	}
 	
-	private static int LIS(int[] arr) {
+	/*
+	 * T = O(n*n)
+	 * S = O(n*n) + O(stack_space) = O(n*n) + O(n) = O(n*n)
+	 */
+	private static int LIS(int i, int prev, int[] arr, int[][] dp) {
 		
 		int n = arr.length;
-		int[] x = new int[n + 1];
-	 
-		for(int i = 0; i <= n-1; i++) {
-			x[i+1] = arr[i];
+		if(i == n) {
+			return 0;
 		}
 		
-		int[][] LIS = new int[n+1][n+1];
-		
-		for(int minSofarIndex = 0; minSofarIndex <= n; minSofarIndex++) {
-			LIS[0][minSofarIndex] = 0;
+		if(dp[i+1][prev+1] != -1) {
+			return dp[i+1][prev+1];
 		}
 		
-		for(int i = 0; i <= n; i++) {
-			LIS[i][0] = 0;
+		int len = LIS(i+1, prev, arr, dp);
+		if(prev == -1 || arr[prev] < arr[i]) {
+			len = Math.max(1 + LIS(i+1, i, arr, dp), len);
 		}
 		
-		for(int i = 1; i <= n; i++) {
-			for(int minSoFarIndex = 1; minSoFarIndex <= n; minSoFarIndex++) {
-				if(x[i] < x[minSoFarIndex]) {
-					LIS[i][minSoFarIndex] = Math.max(1 + LIS[i-1][i], LIS[i-1][minSoFarIndex]);
-				} else {
-					LIS[i][minSoFarIndex] = LIS[i-1][minSoFarIndex];
-				}
-			}
-		}
-		
-		return LIS[n][n];
+		dp[i+1][prev+1] = len;
+		return len;
 	}
 }
