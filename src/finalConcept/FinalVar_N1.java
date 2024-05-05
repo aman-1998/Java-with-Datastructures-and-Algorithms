@@ -15,6 +15,7 @@ class Test
 {
 	private final int var1 = 134;
 	private final int var2;
+	private final int var7;
 	public static final int var5 = 575;
 	public static final int var6;
 	
@@ -32,6 +33,11 @@ class Test
 		System.out.println("Bye UFC"+var3);
 		System.out.println("Bye UFC"+var1);
 		System.out.println("Bye UFC"+var2);
+		System.out.println("Bye UFC"+var7);
+	}
+	
+	{
+		this.var7 = 145;
 	}
 	
 	static

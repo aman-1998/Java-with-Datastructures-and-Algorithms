@@ -24,7 +24,7 @@ public class SchoolStudentAdapter implements Student {
 	}
 	
 	public String getStandard() {
-		return this.getStandard();
+		return this.schoolStudent.getStandard();
 	}
 	
 }

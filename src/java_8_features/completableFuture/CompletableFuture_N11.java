@@ -42,5 +42,7 @@ public class CompletableFuture_N11 {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		// exceptionally, handle left
 	}
 }

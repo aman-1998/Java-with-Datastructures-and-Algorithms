@@ -66,5 +66,11 @@ public class Wait_Notify_N12 {
 		
 		thread1.start();
 		thread2.start();
+		
+		/*
+		 * One important point to note here is that wait() and notify() has to be called from within synchronized block
+		 * on the same object. In this example, we have used 'this' (which refers to objects of same class Wait_Notify_N12).
+		 * Therefore, the threads synchronize on the same object (the Wait_Notify_N12 instance) to coordinate their execution.
+		 */
 	}
 }
