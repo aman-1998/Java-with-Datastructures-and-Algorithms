@@ -10,6 +10,9 @@ public class Longest_Subarray_With_Sum_Divisible_By_K {
 	
 	public static void main(String[] args) {	
 		
+		System.out.println((-10)%3);
+		
+		
 		int[] arr = {1, 2, 2, 1, 2, 4};
 		int k = 7;
 		
