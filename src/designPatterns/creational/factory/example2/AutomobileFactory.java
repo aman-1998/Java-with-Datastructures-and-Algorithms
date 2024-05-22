@@ -11,7 +11,7 @@ public class AutomobileFactory {
 				return new AutoRikshaw();
 			case 4 :
 				return new Car();
-			case 5 :
+			case 8 :
 				return new Truck();
 			default :
 				return null;

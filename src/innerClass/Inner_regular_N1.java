@@ -33,6 +33,7 @@ class Outer1 {
 		public void test() {
 			System.out.println(var);
 			System.out.println(str);
+			System.out.println(var1);
 		}
 	}
 }

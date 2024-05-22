@@ -101,5 +101,9 @@ public class StringBuffer_class_methods {
 		System.out.println(str.getClass().getName());
 		System.out.println(str instanceof String);
 		
+		StringBuffer sb = new StringBuffer("Aman Kumar Mishra");
+		sb.replace(0, 3, "Hanuma");
+		System.out.println(sb);
+		
 	}
 }

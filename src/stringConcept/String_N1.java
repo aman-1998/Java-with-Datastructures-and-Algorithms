@@ -44,7 +44,7 @@ public class String_N1
 		String str22 = "Mai tera Hero";
 		String str23 = str22.substring(2); // substring(2)
 		System.out.println(str23);
-		String str24 = str22.substring(4,8); // substring(2,7)
+		String str24 = str22.substring(4,10); // substring(2,7)
 		System.out.println(str24);
 		String str25 = "aman";
 		System.out.println(str25.toUpperCase()); // toUpperCase()

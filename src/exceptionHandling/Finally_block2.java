@@ -32,6 +32,12 @@ public class Finally_block2 {
 		}
 		catch(ArithmeticException e)
 		{
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			System.out.println("Exception : \'"+e.getMessage()
 			+"\' occured at line number "+e.getStackTrace()[0].getLineNumber());
 		}

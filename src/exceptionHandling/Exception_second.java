@@ -31,6 +31,8 @@ public class Exception_second {
 			System.out.println(e.getStackTrace()[0]);
 			e.printStackTrace();
 		}
+		
+		System.out.println("Hi, I am Aman Kumar Mishra");
 	}
 	public void test()
 	{

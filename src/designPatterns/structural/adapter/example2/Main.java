@@ -17,9 +17,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Student student1 = new CollegeStudent("Ravi", "ravi.mishra@gmail.com", "CSE");
+		CollegeStudent student1 = new CollegeStudent("Ravi", "ravi.mishra@gmail.com", "CSE");
 		//Student student2 = new SchoolStudent("Aman", "aman.iyer@gmail.com", "XII");
-		Student student2 = new SchoolStudentAdapter(new SchoolStudent("Aman", "aman.iyer@gmail.com", "XII"));
+		SchoolStudentAdapter student2 = new SchoolStudentAdapter(new SchoolStudent("Aman", "aman.iyer@gmail.com", "XII"));
 		
 		List<Student> studentList = new ArrayList<>();
 		studentList.add(student1);

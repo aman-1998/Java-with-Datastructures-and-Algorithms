@@ -26,6 +26,7 @@ class Outer2 {
 			
 			public void message() {
 				System.out.println(name);
+				System.out.println(var1);
 			}
 		}
 		

@@ -35,6 +35,10 @@ public class Testing_intern_SCP {
 		System.out.println(s9 == s10);
 		System.out.println(s11 == s12);
 		System.out.println(s11.equals(s12));
+		System.out.println(s9.equals(s10));
+		System.out.println(s9.equals(s12));
+		System.out.println(s10 == s11);
+		
 		
 	}
 }
