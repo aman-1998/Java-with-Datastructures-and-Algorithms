@@ -14,7 +14,7 @@ public class Main {
 	private static Subscriber subs2 = new Amit("Amit");
 	
 	private static Channel channel1 = new NeetCode("NeetCode");
-	private static Channel channel2 = new NeetCode("Striver");
+	private static Channel channel2 = new Striver("Striver");
 	
 	public static void main(String[] args) {
 		
