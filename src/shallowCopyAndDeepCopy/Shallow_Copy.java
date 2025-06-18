@@ -23,6 +23,8 @@ public class Shallow_Copy {
 			subjects.remove("Math");
 			subjects.remove("Science");
 			
+			student1.setName("Barsha");
+			
 			System.out.println(student1);
 			
 			System.out.println(student2);

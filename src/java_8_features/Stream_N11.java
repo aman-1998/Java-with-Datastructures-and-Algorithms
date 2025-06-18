@@ -105,10 +105,24 @@ public class Stream_N11 {
 		list.add(new Employee(162, "Nikita Kushwaha"));
 		list.add(new Employee(151, "Sneha Barnwal"));
 		list.add(new Employee(140, "Vivek Agarwal"));
+		list.add(new Employee(155, "Aman Shah"));
+		list.add(new Employee(134, "Sneha Srivastav"));
+		list.add(new Employee(167, "Sneha Advani"));
 		list.add(new Employee(129, "Chandni Manchanda"));
 		
 		list = list.stream().sorted(Comparator.comparing(Employee::getId).reversed()).collect(Collectors.toList());
 		list.stream().forEach(employee -> System.out.println(employee)); // Descending order
+		
+		
+		System.out.println("-----------------------------------------------------------");
+		
+		/* Sort on the Employee on the basis of firstname and if it the name is same then sort on the basis 
+		 * of id in descending order.
+		 * */
+		list.stream().sorted(Comparator.comparing((Employee emp) -> emp.getName().substring(0, emp.getName().indexOf(" ")))
+				                       .thenComparing(Comparator.comparing((Employee emp) -> emp.getId()).reversed()))
+		             .forEach(emp -> System.out.println(emp));
+		
 		
 		System.out.println("-----------------------------------------------------------");
 		
@@ -139,7 +153,7 @@ public class Stream_N11 {
 		largetsName = list2.stream().sorted((name1, name2) -> name1.length() > name2.length() ? -1 : 1).findFirst().get();
 		System.out.println(largetsName);
 		
-		largetsName = list2.stream().reduce((name1, name2) -> name1.length() > name2.length() ? name1 : name2).get();
+		largetsName = list2.stream().reduce((result, acumulator) -> result.length() > acumulator.length() ? result : acumulator).get();
 		System.out.println(largetsName);
 	}
 }

@@ -36,13 +36,27 @@ public class CompletableFuture_N11 {
 		  .thenAccept(result -> System.out.println("Result = " + result));
 		
 		
+		CompletableFuture.supplyAsync(() -> {
+			
+			if(Math.random() < 0.5) {
+				throw new RuntimeException("Oops!");
+			} else {
+				return "OK";
+			}
+		}).handle((result, ex) -> {
+			if (ex != null) {
+		        return "Recovered from '" + ex.getMessage() + "'";
+		    } else {
+		        return "Success: " + result;
+		    }
+		}).thenAccept(t -> System.out.println(t));
+		
+		
 		System.out.println("Main thread");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		// exceptionally, handle left
 	}
 }

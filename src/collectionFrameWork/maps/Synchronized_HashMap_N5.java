@@ -17,6 +17,14 @@ public class Synchronized_HashMap_N5 {
 		synchronizedHashMap.put(7, "Raghaw");
 		synchronizedHashMap.put(8, "Nandini");
 		
+		/*
+		    HashMap<Integer, String> hMap = new HashMap<>();
+			hMap.put(3, "Aman");
+			hMap.put(4, "Mishra");
+			hMap.put(6, "Kumar");
+			Map<Integer, String> synHashMap = Collections.synchronizedMap(hMap);
+		 */
+		
 		Iterator<Map.Entry<Integer, String>> ite = synchronizedHashMap.entrySet().iterator();
 		while(ite.hasNext()) {
 			Map.Entry<Integer, String> entry = ite.next();

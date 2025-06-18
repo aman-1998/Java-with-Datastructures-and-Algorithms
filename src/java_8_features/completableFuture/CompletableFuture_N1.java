@@ -33,9 +33,10 @@ public class CompletableFuture_N1 {
 		// Simulate that main thread is doing some work
 		System.out.println("Main is doing some work");
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Main thread ends");
 	}
 }

@@ -3,6 +3,24 @@ package multithreading;
 public class Wait_Notify_N12 {
 	private int balance = 500;
 	
+	/*
+	 * wait(), notify(), and notifyAll() can only be called when the current thread has acquired the 
+	 * object's monitor, i.e., is inside a synchronized block (or method) that locks on the same object.
+	 * 
+	 * Otherwise, Java will throw: IllegalMonitorStateException
+	 * 
+	 * Explanation:
+     * When a thread calls wait():
+     * It releases the lock on the object temporarily.
+     * It enters the waiting state and waits to be notified.
+     *
+     * When a thread calls notify():
+     * It signals one waiting thread (if any) that it may proceed.
+     * The notified thread must reacquire the lock before continuing.
+     *
+     * This whole coordination is tied to the object's monitor — and only one thread at a time can own it.
+	 * 
+	 */
 	public void withdraw(int amount) {
 		while(amount > balance || balance == 0) {
 			try {

@@ -1,8 +1,11 @@
 package multithreading;
 
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Thread_pooling_N18 {
 	public static void main(String[] args) {
@@ -143,6 +146,52 @@ public class Thread_pooling_N18 {
 		executorService.submit(thread13);
 		executorService.submit(thread1);
 		
+		
+		Callable<Integer> callable1 = () -> {
+			// Your code
+			Thread.sleep(3000);
+			return 4+5;
+		};
+		Future<Integer> res1 =  executorService.submit(callable1);
+		
+		Future<Integer> res2 = executorService.submit(() -> {
+			// Your code
+			Thread.sleep(3000);
+			return 8+7;
+		});
+		
+		Testing testing = new Testing(20 , 30);
+		Future<Integer> res3 = executorService.submit(testing);
+		
+		
+		try {
+			System.out.println(res1.get() + " | " + res2.get() + " | " + res3.get());
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("Main thread ends...");
+		
 		executorService.shutdown();
+	}
+}
+
+
+class Testing implements Callable<Integer> {
+	
+	private int x;
+	
+	private int y;
+	
+	public Testing(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	@Override
+	public Integer call() throws Exception {
+		int result = x + y;
+		return result;
 	}
 }

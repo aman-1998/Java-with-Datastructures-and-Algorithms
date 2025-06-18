@@ -31,7 +31,7 @@ public class CompletableFuture_N8 {
 		
 		futureWhichCompletesFirst.thenAccept(result -> {
 			if(result instanceof String) {
-				System.out.println("result instanceof String: " + "Hey! there I am using watsapp");
+				System.out.println("result instanceof String: " + result);
 			} else if(result instanceof Integer) {
 				System.out.println("result instanceof Integer: " + "Sum = " + result);
 			} else if(result instanceof Void) {

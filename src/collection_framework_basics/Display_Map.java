@@ -14,8 +14,8 @@ public class Display_Map<K, V> {
 	}
 	
 	public void display2(Map<K, V> map) {
-		for(Map.Entry<K, V> entrySet : map.entrySet()) {
-			System.out.println(entrySet);
+		for(Map.Entry<K, V> entry : map.entrySet()) {
+			System.out.println(entry);
 		}
 	}
 	

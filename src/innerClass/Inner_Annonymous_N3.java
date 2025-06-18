@@ -3,6 +3,8 @@ package innerClass;
 public class Inner_Annonymous_N3 {
 	public static void main(String[] args) {
 		Test1 ob1 = new Test1() {
+			
+			@Override
 			public void fun1() {
 				System.out.println("Bye");
 			}
@@ -13,10 +15,13 @@ public class Inner_Annonymous_N3 {
 		};
 		
 		Test2 ob2 = new Test2() {
+			
+			@Override
 			public void fun1() {
 				System.out.println("Namaste");
 			}
 			
+			@Override
 			public void fun2() {
 				System.out.println("Pranam");
 			}

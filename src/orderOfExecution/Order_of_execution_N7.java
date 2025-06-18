@@ -15,7 +15,7 @@ class TEST1
 	public TEST1(String str)
 	{
 		System.out.println(str);
-		System.out.println("3rd execution");
+		//System.out.println("3rd execution");
 	}
 }
 
