@@ -12,9 +12,13 @@ package designPatterns.structural.adapter.example1;
  */
 public class Main {
 	public static void main(String[] args) {
-		ChargeIphone chargerIphone = new ChargeIphone();
-		Adapter adapter = new Adapter(new SamsungCharger());
-		chargerIphone.setIphoneCharger(adapter);
-		chargerIphone.charge();
+		IphoneCharger iphoneCharger = new Iphone6Charger();
+		iphoneCharger.supplyPowerToIphones();
+		
+		SamsungCharger samsungCharger = new SamsungM31Charger();
+		samsungCharger.supplyPowerToSamsungPhone();
+		
+		Adapter adapter = new Adapter(samsungCharger);
+		adapter.supplyPowerToIphones();
 	}
 }

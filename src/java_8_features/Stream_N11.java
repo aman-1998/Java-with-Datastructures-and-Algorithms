@@ -118,7 +118,7 @@ public class Stream_N11 {
 		
 		/* Sort on the Employee on the basis of firstname and if it the name is same then sort on the basis 
 		 * of id in descending order.
-		 * */
+		 */
 		list.stream().sorted(Comparator.comparing((Employee emp) -> emp.getName().substring(0, emp.getName().indexOf(" ")))
 				                       .thenComparing(Comparator.comparing((Employee emp) -> emp.getId()).reversed()))
 		             .forEach(emp -> System.out.println(emp));

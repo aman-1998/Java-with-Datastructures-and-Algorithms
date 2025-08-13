@@ -148,6 +148,11 @@ public class Stream_N12 {
 				  .sorted(Comparator.comparing(entry -> -(entry.getValue().getMarks()))) // Note: (-) is used for descending order of marks
 				  .forEach(entry -> System.out.println(entry));
 		
+		linkedhMap.entrySet()
+		          .stream()
+		          .sorted(Comparator.comparing((Map.Entry<Student, Marks> entry) -> entry.getValue().getMarks()).reversed())
+		          .forEach(entry -> System.out.println(entry));
+		
 		System.out.println("----------------------------------------------");
 		
 		linkedhMap.entrySet()

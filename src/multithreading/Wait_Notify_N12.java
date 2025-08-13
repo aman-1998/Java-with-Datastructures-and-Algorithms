@@ -25,6 +25,10 @@ public class Wait_Notify_N12 {
 		while(amount > balance || balance == 0) {
 			try {
 				System.out.println("Waiting to withdraw Rs."+amount+" ...");
+				
+				/* If not enclosed in a synchronized block,
+				 * it will throw IllegalMonitorStateException (runtime exception)
+				 */
 				synchronized (this) {
 					wait();
 				}

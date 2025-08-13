@@ -2,11 +2,14 @@ package java_8_features;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Stream_N8 {
 	public static void main(String[] args) {
@@ -70,6 +73,63 @@ public class Stream_N8 {
 		BigDecimal average1 = sumOfValuesOfMapWithOddMeters.divide(BigDecimal.valueOf(sizeOfMapWithOddMeters), RoundingMode.HALF_UP);
 		BigDecimal average2 = sumOfValuesOfMapWithOddMeters.divide(BigDecimal.valueOf(sizeOfMapWithOddMeters_), RoundingMode.HALF_UP);
 		System.out.println(average1 + " | " +average2);
+		
+		System.out.println("---------------------------------------------");
+		
+		
+		/*
+		 * map is one-to-one mapping
+		 */
+		List<Integer> listOfIntegers = Arrays.asList(1, 2, 3, 4, 5);
+		
+		listOfIntegers.stream().map(t -> t*10)
+		                       .forEach(t -> System.out.print(t + " "));
+		
+		System.out.println();
+		
+		/*
+		 * flatMap is one-to-many mapping
+		 * 
+		 * 1 -> [10, 20]
+		 * 2 -> [20, 40]
+		 * 3 -> [30, 60]
+		 * 4 -> [40, 80]
+		 * 5 -> [50, 100]
+		 * 
+		 * All flattened into: 10, 20, 20, 40, 30, 60, 40, 80, 50, 100
+		 */
+		listOfIntegers.stream().flatMap(t -> Stream.of(t*10, t*20))
+		                       .forEach(t -> System.out.print(t + " "));
+		
+		System.out.println();
+		
+		List<Integer> listOfIntegers1 = Arrays.asList(1, 2, 3, 4, 5);
+		List<Integer> listOfIntegers2 = Arrays.asList(6, 7, 8, 9, 10);
+		List<Integer> listOfIntegers3 = Arrays.asList(11, 12, 13, 14, 15);
+		
+		//List<List<Integer>> twoDList = new ArrayList<List<Integer>>();
+		List<List<Integer>> twoDList = new ArrayList<>();
+		twoDList.add(listOfIntegers1);
+		twoDList.add(listOfIntegers2);
+		twoDList.add(listOfIntegers3);
+		
+		/*
+		 *	[[1, 2, 3, 4, 5]]
+		 *	[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]		
+		 *	[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
+		 */
+		twoDList.stream().flatMap(list -> Stream.of(list)).forEach(t -> System.out.print(t + " "));
+		
+		System.out.println();
+		
+		/*
+		 * Flatten the 2D list:
+		 * 
+		 * [1, 2, 3, 4, 5]
+		 * [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		 * [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+		 */
+		twoDList.stream().flatMap(list -> list.stream()).forEach(t -> System.out.print(t + " "));
 		
 	}
 }

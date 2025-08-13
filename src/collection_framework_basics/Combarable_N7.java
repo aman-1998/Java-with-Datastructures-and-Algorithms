@@ -38,6 +38,7 @@ class Employee implements Comparable<Employee> {
 		this.empName = empName;
 	}
 	
+	@Override
 	public int compareTo(Employee emp) {
 		
 		if(this.id > emp.id) {
