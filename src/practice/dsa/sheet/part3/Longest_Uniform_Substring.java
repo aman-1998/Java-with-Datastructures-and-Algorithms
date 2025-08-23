@@ -1,14 +1,14 @@
 package practice.dsa.sheet.part3;
 
-public class Longest_Repeating_subsequence {
+public class Longest_Uniform_Substring {
 	
 	public static void main(String[] args) {
 		
 		String str = "aabbbc";
-		longestUniformSubsequence(str);
+		longestUniformSubstring(str);
 	}
 	
-	private static void longestUniformSubsequence(String str) {
+	private static void longestUniformSubstring(String str) {
 		
 		int n = str.length();
 		int max = Integer.MIN_VALUE;

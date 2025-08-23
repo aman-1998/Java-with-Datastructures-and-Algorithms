@@ -1,4 +1,4 @@
-package multithreading.practice.questions;
+package practice.dsa.sheet.multithreading;
 
 import java.util.concurrent.ArrayBlockingQueue;
 

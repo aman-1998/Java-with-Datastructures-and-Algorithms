@@ -1,4 +1,4 @@
-package multithreading.practice.questions;
+package practice.dsa.sheet.multithreading;
 
 public class Print_Even_Odd_In_Order_Using_Two_Threads_Part1 {
 	
@@ -15,6 +15,10 @@ public class Print_Even_Odd_In_Order_Using_Two_Threads_Part1 {
 	}
 }
 
+/*
+ * Even and odds are printed by two threads evenThread and oddThread 
+ * respectively and alternatively.
+ */
 class Printer {
 	
 	private boolean oddTurn = false;

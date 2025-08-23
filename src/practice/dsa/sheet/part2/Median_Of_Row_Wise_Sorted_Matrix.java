@@ -16,7 +16,7 @@ public class Median_Of_Row_Wise_Sorted_Matrix {
 	/*
 	 * Binary search on answers
 	 * 
-	 * T = O(log max-min) * O(m * log n)
+	 * T = O(m) + O(log max-min) * O(m * log n)
 	 * 
 	 * where, m = no. of rows, n = no. of columns
 	 *        max = maximum element, min = minimum element

@@ -1,4 +1,4 @@
-package multithreading.practice.questions;
+package practice.dsa.sheet.multithreading;
 
 public class Print_Even_Odd_In_Order_Using_Two_Threads_Part2 {
 	

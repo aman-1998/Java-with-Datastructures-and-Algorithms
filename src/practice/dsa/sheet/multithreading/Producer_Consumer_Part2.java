@@ -1,4 +1,4 @@
-package multithreading.practice.questions;
+package practice.dsa.sheet.multithreading;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -57,6 +57,7 @@ class SharedBuffer {
 		queue.add(value);
 		System.out.println(value + " added in queue");
 		notify(); // notifies the waiting consumer-thread
+		// notifyAll(); // if we have multiple producers
 	}
 	
 	public synchronized int consume() throws InterruptedException {
@@ -68,6 +69,7 @@ class SharedBuffer {
 		int val = queue.poll();
 		System.out.println(val + " is consumed");
 		notify(); // notifies the waiting producer-thread
+		// notifyAll(); // if we have multiple consumers
 		return val;
 	}
 }
