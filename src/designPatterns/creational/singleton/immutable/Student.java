@@ -5,7 +5,7 @@ import java.util.Date;
 /*
  * A class that is both immutable and singleton
  */
-public class Student {
+public final class Student {
 	
 	private final int roll;
 	

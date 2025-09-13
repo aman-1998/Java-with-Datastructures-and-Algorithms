@@ -18,7 +18,7 @@ public class Counting_Semaphore_N2 {
 			washRoomPermits.acquire();
 			System.out.println("Permission to use washroom granted to Akash. Using washroom...");
 			
-			washRoomPermits.release(); // Two people left the washroom
+			washRoomPermits.release(); // One person left the washroom
 			System.out.println("One person left the washroom");
 			
 			washRoomPermits.acquire();

@@ -179,6 +179,15 @@ public class Stream_N13 {
 														  .collect(Collectors.toList());
 		
 		System.out.println("=>Second most frequent elements : " + secondMostFrequentElements2);
+		
+		// Best and easy
+		List<Character> secondMostFrequentElements3 = listOfChars.stream().collect(Collectors.groupingBy(ch -> ch))
+																 .entrySet().stream().collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue().size()))
+																 .entrySet().stream().collect(Collectors.groupingBy(entry -> entry.getValue(), Collectors.mapping(entry -> entry.getKey(), Collectors.toList())))
+																 .entrySet().stream().sorted(Comparator.comparing((Map.Entry<Integer, List<Character>> entry) -> entry.getKey()).reversed())
+																 .skip(1).limit(1).flatMap(entry -> entry.getValue().stream()).collect(Collectors.toList());
+		
+		System.out.println("===>Second most frequent elements : " + secondMostFrequentElements3);
 		                    
 		
 		System.out.println("\n----------------------------------------------------");
@@ -198,7 +207,7 @@ public class Stream_N13 {
 		
 		List<Integer> listOfInteger5 = Arrays.asList(1, 5, 7, 1, 4, 8, 6, 7, 2, 7, 5, 9);
 		
-		double avg = listOfInteger5.stream().collect(Collectors.averagingInt(t -> (int)t));
+		double avg = listOfInteger5.stream().collect(Collectors.averagingInt(t -> t));
 		
 		System.out.println("Average : " + avg);
 		

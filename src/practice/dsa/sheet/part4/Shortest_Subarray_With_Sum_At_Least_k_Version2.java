@@ -1,4 +1,4 @@
-package practice.dsa.sheet.part1;
+package practice.dsa.sheet.part4;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -11,6 +11,10 @@ class Pair1 {
 	public Pair1(long cumulativeSum, int index) {
 		this.cumulativeSum = cumulativeSum;
 		this.index = index;
+	}
+	
+	public String toString() {
+		return "(" + cumulativeSum + ", " + index + ")";
 	}
 }
 
@@ -25,9 +29,11 @@ public class Shortest_Subarray_With_Sum_At_Least_k_Version2 {
 		//int[] arr = {1, 4, 45, 6, 0, 19};
 		//int minLength = shortest_subarray_with_sum_at_least_k(arr, 51);
 		
-		int[] arr = {2, 7, 3, -8, 4, 10};
+		//int[] arr = {2, 7, 3, -8, 4, 10};
 		//int minLength = shortest_subarray_with_sum_at_least_k_BF(arr, 12);
-		int minLength = shortest_subarray_with_sum_at_least_k(arr, 12);
+		
+		int[] arr = {-28,81,-20,28,-29};
+		int minLength = shortest_subarray_with_sum_at_least_k(arr, 89);
 		
 		System.out.println(minLength);
 	}
@@ -110,4 +116,5 @@ public class Shortest_Subarray_With_Sum_At_Least_k_Version2 {
 		}
 		return minLength == Integer.MAX_VALUE ? 0 : minLength;
 	}
+	
 }

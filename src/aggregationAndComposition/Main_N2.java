@@ -1,5 +1,13 @@
 package aggregationAndComposition;
 
+/*
+ * Aggregation => has-a relation ship between parent and child
+ * The association is weaker
+ * 
+ * Composition => has-a relationship but the association is stronger
+ * So, for composition we can use part-of relationship between parent
+ * and child
+ */
 public class Main_N2 {
 	
 	public static void main(String[] args)

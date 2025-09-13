@@ -57,7 +57,7 @@ class SharedBuffer {
 		queue.add(value);
 		System.out.println(value + " added in queue");
 		notify(); // notifies the waiting consumer-thread
-		// notifyAll(); // if we have multiple producers
+		// notifyAll(); // if we have multiple consumers
 	}
 	
 	public synchronized int consume() throws InterruptedException {
@@ -69,7 +69,7 @@ class SharedBuffer {
 		int val = queue.poll();
 		System.out.println(val + " is consumed");
 		notify(); // notifies the waiting producer-thread
-		// notifyAll(); // if we have multiple consumers
+		// notifyAll(); // if we have multiple producers
 		return val;
 	}
 }

@@ -10,6 +10,6 @@ public class Adapter implements IphoneCharger {
 
 	@Override
 	public void supplyPowerToIphones() {
-		System.out.println("Supply power to Iphone");
+		samsungCharger.supplyPowerToSamsungPhone();
 	}
 }

@@ -79,13 +79,14 @@ public class Shortest_Subarray_With_Sum_At_Least_k_Version1 {
 				}
 			}
 			
-			int windowSize = ((r-l) + 1) + 1;
-			if(windowSize < minLength) {
-				minLength = windowSize;
+			int len = ((r-l) + 1) + 1;
+			if(len < minLength) {
+				minLength = len;
 			}
 			r++;
 		}
 		
-		return minLength == Integer.MAX_VALUE ? 0 : minLength;
+		return minLength;
 	}
+	
 }

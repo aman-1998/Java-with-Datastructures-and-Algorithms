@@ -31,7 +31,7 @@ public class BookShop implements Cloneable {
 	}
 
 	/*
-	 * In reality it should connect to database and loods data(book) from DB.
+	 * In reality it should connect to database and loads data(book) from DB.
 	 * But here, just for simplicity we are using loop and simulating the situation.
 	 */
 	public void bringBooksFromWareHouse() { 

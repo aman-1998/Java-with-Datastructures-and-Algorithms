@@ -34,11 +34,19 @@ public class Highest_Average_Score_N15 {
 		 * 
 		 * 
 		 */
+		double highestAverage = nameScorePairs.stream().collect(Collectors.groupingBy(list -> list.get(0), Collectors.averagingDouble(list -> Double.valueOf(list.get(1)))))
+													   .entrySet().stream().map(entry -> entry.getValue())
+													   .sorted(Comparator.reverseOrder())
+													   .limit(1).collect(Collectors.toList()).get(0);
+		
+		System.out.println("Highest Average : " + highestAverage);	
+		
+		// Better approach
 		double highestAvg = nameScorePairs.stream().collect(Collectors.groupingBy(pair -> pair.get(0), Collectors.averagingDouble(list -> Double.valueOf(list.get(1)))))
-												   .entrySet().stream().max(Comparator.comparing((Map.Entry<String, Double> entry) -> entry.getValue()))
-												    				   .get().getValue();
-							   
-		System.out.println("Highest Average : " + highestAvg);	
+				   .entrySet().stream().max(Comparator.comparing((Map.Entry<String, Double> entry) -> entry.getValue()))
+				    				   .get().getValue();
+
+System.out.println("Highest Average : " + highestAvg);	
 		
 		
 		double secondHighestAvg = nameScorePairs.stream().collect(Collectors.groupingBy(pair -> pair.get(0), Collectors.averagingDouble(list -> Double.valueOf(list.get(1)))))
